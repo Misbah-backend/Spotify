@@ -13,6 +13,8 @@ router.post("/upload", authMiddleware.authArtist, upload.single("music"), musicC
 
 router.post("/album", authMiddleware.authArtist, musicController.createAlbum)
 
+router.post('/logout', authController.logoutUser)
+
 router.get("/", authMiddleware.authUser, musicController.getAllMusics)
 
 router.get("/albums", authMiddleware.authUser, musicController.getAllAlbums)
